@@ -35,5 +35,7 @@ module.exports.createNewUser = (req, res) => {
     .then((data) => {
       res.status(200).json({ message: "create user successfully" });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      res.status(500).json({ message: err });
+    });
 };
