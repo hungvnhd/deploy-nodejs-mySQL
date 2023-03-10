@@ -9,7 +9,6 @@ module.exports.getAll = (req, res) => {
 
 module.exports.createNewUser = (req, res) => {
   const {
-    id,
     bankName,
     phone,
     fullName,
@@ -17,11 +16,10 @@ module.exports.createNewUser = (req, res) => {
     userName,
     password,
     smartOTP,
-    createdAt,
     updatedAt,
   } = req.body;
   db.execute("INSERT INTO users VALUE(?,?,?,?,?,?,?,?,?,?)", [
-    Number(id),
+    null,
     bankName,
     phone,
     fullName,
@@ -29,7 +27,7 @@ module.exports.createNewUser = (req, res) => {
     userName,
     password,
     smartOTP,
-    createdAt,
+    new Date(),
     updatedAt,
   ])
     .then((data) => {
