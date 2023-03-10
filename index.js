@@ -16,7 +16,7 @@ const usersRouter = require("./routes/posts.router");
 app.use("/api/v1/users", usersRouter);
 
 app.use("/", (req, res) => {
-  res.sendFile("/Clone/deploy-nodejs-mysql/assets/html/index.html");
+  res.render("index.ejs");
 });
 app.listen(5000, () => {
   console.log("Server is running....");
